@@ -94,7 +94,7 @@ while place_order:
             # Print out the menu options from the menu_category_name
             print(f"What {menu_category_name} item would you like to order?")
             i = 1
-            menu_items = {}
+            #menu_items = {}
             print("Item # | Item name                | Price")
             print("-------|--------------------------|-------")
             for key, value in menu[menu_category_name].items():
@@ -148,21 +148,20 @@ while place_order:
                     # price
                     price = menu_items[(selected_item)]["Price"]
                     
-                    #order_list[ordered_item_num] = selected_item_name #<<<<<<<
-                    order_list[ordered_item_num] = { #selected_item_name # <<<<<
-                                  'Item Name': selected_item_name["Item name"],  #<<<<
-                                  'Price':  selected_item_name["Price"],   #<<<<<<
-                                  'Quantity': order_qty  }  # <<<<
+                    
+                    order_list[ordered_item_num] = { 
+                                  'Item Name': selected_item_name["Item name"],  
+                                  'Price':  selected_item_name["Price"],  
+                                  'Quantity': order_qty  } 
                                   
                     ordered_item_num += 1
-                    print(order_list)  #<<<<<<
-
-                    # Tell the customer that their input isn't valid
+                    
                 else:
+                    # Tell the customer that their input isn't valid
                     print("Please select a valid option from the menu list")
 
-                # Tell the customer they didn't select a menu option
             else:
+                # Tell the customer they didn't select a menu option
                 print("Please select a valid menu option ")
         else:
             # Tell the customer they didn't select a menu option
@@ -189,6 +188,7 @@ while place_order:
                 place_order = False
                 # Since the customer decided to stop ordering, thank them for
                 # their order
+                print("\n")
                 print("Thank you for your order")
                 # Exit the keep ordering question loop
                 place_order = False
@@ -197,7 +197,6 @@ while place_order:
                 # Tell the customer to try again
                 print("Invalid response. Please make a valid selection ")
             
-
 
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
@@ -210,78 +209,44 @@ print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
 
-#i = 1
-
 #print(order_list)
 for key, value in order_list.items():
 
 #for item_num, item_details in order_list.items():
-    #print(value)  <<<<<<
     
     # 7. Store the dictionary items as variables
     item_name = value["Item Name"]
-    #(i, item_name)
-    num_item_spaces = 25 - len(item_name)
-    item_spaces = " " * num_item_spaces  
-
     item_price = value["Price"]
-    #print(i, item_price)
-    num_price_spaces = 8 - len(str(item_price))  #<<<<<
-    price_spaces = " " * num_price_spaces
-
     item_quantity = value["Quantity"]
-    #print(i, item_quantity)
 
-    #print(f"{item_name:<25}) | {item_price:<8} | {item_quantity}")
-
-    #if type(value) is dict:
-
-    # if key == "Item name":
-    #     #ord_item_name = value
-    #     num_item_spaces = 25 - len(item_name)  # <<<<<
-    #     print(num_item_spaces)
-    # elif key == "Price":
-    #     #ord_item_price = value
-    #     num_price_spaces = 8 - len(item_price)  #<<<<<
-    #     print(num_price_spaces)
-    # elif key == "Quantity":
-    #     ord_item_qty = value  
-    #     i += 1.  
 
     # 8. Calculate the number of spaces for formatted printing
-    # num_item_spaces = 26 - len(value)  # <<<<<
-    # num_price_spaces = 9 - len(value)  #<<<<<
+    num_item_spaces = 25 - len(item_name)
+    num_price_spaces = 8 - len(str(item_price))  
+
     #print(num_item_spaces, num_price_spaces) #<<<<<
 
     # 9. Create space strings
-    #item_spaces = " " * num_item_spaces  #<<<<<
-    #price_spaces = " " * num_price_spaces #<<<<<
-
+    item_spaces = " " * num_item_spaces 
+    price_spaces = " " * num_price_spaces
 
     # 10. Print the item name, price, and quantity
-    # if key == "Quantity":
-    #     item_spaces = " " * num_item_spaces  
-    #     price_spaces = " " * num_price_spaces
-
-        # print(ord_item_name, item_spaces, ord_item_price, 
-        #       price_spaces, ord_item_qty)  #<<<<<<
-        # print(i)  #<<<<<
-    
     print(f"{item_name} {item_spaces}| ",
           f"{item_price}  | ", #{price_spaces}| ",
           f"{item_quantity}")
-    #print(f"{item_name:<25}) | {item_price:<8} | {item_quantity}")
-#    i += 1
+    
 
 print("----------------------------------------------")
-#print("\n")
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 tot_oder_amt = sum([item["Price"] * item["Quantity"] for item in order_list.values()])
-#sum(tot_oder_amt)
-print(f"Order Total Amount: ${tot_oder_amt:.2f}")
-print("----------------------------------------------")
-print("\n")
+
+num_amt_spaces = 30 - len("Order Total Amount: ")
+amt_spaces = " " * num_item_spaces  
+
+print(f"Order Total Amount: {amt_spaces} ${tot_oder_amt:.2f}")
+print("----------------------------------------------\n")
+#print("\n")
 # print(f"\nTotal: ${tot_order_amt:.2f}")
