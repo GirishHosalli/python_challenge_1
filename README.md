@@ -16,10 +16,11 @@ alpha characters then it will prompt the user to choose again.
 Once user inputs a valid menu category number, then it will display a submenu something
 like following - 
 ![alt text](image-1.png)
-Once user makes a item selection and quantity, it will ask tyhe user if they would 
-like to order any more items(s). 
 
-User can make additional menu category selection and individual food items in a 
-submenu. Once user completes input of all required items, it will display following 
+Once user makes a item selection and quantity, it will ask tyhe user if they would 
+like to order any more items(s). User can make additional menu category selection and individual food items in a 
+submenu. 
+Once user completes input of all required items, it will display following 
 order list and total cost.
+
 ![alt text](image-2.png)
