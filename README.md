@@ -7,13 +7,14 @@ Once user selects a menu category, it then provides a list of available menu ite
 It will display menu item and menu item price. 
 
 # Technical Details:
+Below are few technical highlights
 - Menu items are stored in nested dictionary
 - Program makes use of following commands
 ```python
-#### WHILE loop
-#### FOR loop 
-#### MATCH CASE 
-#### List comprehension
+    WHILE loop
+    FOR loop 
+    MATCH CASE 
+    List comprehension
 ```
 
 ## Use:
