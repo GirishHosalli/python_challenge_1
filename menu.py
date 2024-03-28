@@ -226,6 +226,10 @@ for key, value in order_list.items():
     print(f"{item_name} {item_spaces}| ",
           f"${item_price}{price_spaces}| ",
           f"{item_quantity}")
+    # Below is an alternate to performing above print 
+    # print(f"{item_name:<26}| ",
+    #       f"${item_price:>5}| ",
+    #       f"{item_quantity}")
     
 print("----------------------------------------------")
 
