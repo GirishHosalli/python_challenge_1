@@ -1,12 +1,22 @@
 # python_challenge_1
 
-# Python Challenge 1 program
-This python program is designed for an interactive ordering system from a food truck menu.
-It allows the user to choose a menu category from avilable options. 
-Once user selects a menu category, it then provides a list of available menu items.
-It will display menu item and it's corresponding menu item price. 
+# Python Challenge 1 program overview:
+This program is created for use in ordering food from a food truck menu using their interactive ordering system.
+It allows the user to choose a menu category from available options. 
+Once user selects a menu category, it then provides a list of available menu items for that category.
+It will display menu item and menu item price. 
 
-## Use
+# Technical Details:
+- Menu items are stored in nested dictionary
+- Program makes use of following commands
+```python
+#### WHILE loop
+#### FOR loop 
+#### MATCH CASE 
+#### List comprehension
+```
+
+## Use:
 When this program is executed it will display following menu options 
 
 ![alt text](image.png)
