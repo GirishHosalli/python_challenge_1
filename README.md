@@ -13,19 +13,20 @@ Below are few technical highlights
 ```python
     WHILE loop
     FOR loop 
-    MATCH CASE 
+    MATCH 
+        CASE 
     List comprehension
 ```
 
 ## Use:
-When this program is executed it will display following menu options 
+When this program is executed it will display following menu options: 
 
 ![alt text](image.png)
 
 User will need to input one of the available options. If user inputs a negative number,
 alpha characters then it will prompt the user to choose again.
 Once user inputs a valid menu category number, then it will display a submenu something
-like following - 
+like following: 
 
 ![alt text](image-1.png)
 
