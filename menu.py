@@ -83,7 +83,7 @@ while place_order:
     menu_category = input("Type menu number: ")
 
     # Check if the customer's input is a number
-    if menu_category.isdigit() > 0:
+    if menu_category.isdigit():
         # Check if the customer's input is a valid option
         if int(menu_category) in menu_items.keys():
             # Save the menu category name to a variable
@@ -174,15 +174,15 @@ while place_order:
         # 5. Check the customer's input
         match keep_ordering.lower():
             case 'y':
-                keep_ordering.upper() == 'Y'
+                # keep_ordering.upper() == 'Y'
                 # Keep ordering
                 place_order = True
                 # Exit the keep ordering question loop
                 break
                 # Complete the order
             case 'n': 
-                keep_ordering.upper() == 'N'
-                place_order = False
+                # keep_ordering.upper() == 'N'
+                # place_order = False
                 # Since the customer decided to stop ordering, thank them for
                 # their order
                 print("\n")
@@ -215,7 +215,7 @@ for key, value in order_list.items():
     item_quantity = value["Quantity"]
 
     # 8. Calculate the number of spaces for formatted printing
-    num_item_spaces = 25 - len(item_name)
+    num_item_spaces = 26 - len(item_name)
     num_price_spaces = 5 - len(str(item_price))  
 
     # 9. Create space strings
@@ -223,11 +223,11 @@ for key, value in order_list.items():
     price_spaces = " " * num_price_spaces
 
     # 10. Print the item name, price, and quantity
-    print(f"{item_name} {item_spaces}| ",
-          f"${item_price}{price_spaces}| ",
+    print(f"{item_name}{item_spaces}| ",
+          f"${item_price:.2f}{price_spaces}| ",
           f"{item_quantity}")
     # Below is an alternate to performing above print 
-    # print(f"{item_name:<26}| ",
+    #print(f"{item_name:<26}| ",
     #       f"${item_price:>5}| ",
     #       f"{item_quantity}")
     
@@ -238,10 +238,12 @@ print("----------------------------------------------")
 # and print the prices.
 tot_oder_amt = sum([item["Price"] * item["Quantity"] for item in order_list.values()])
 
-num_amt_spaces = 33 - len("Order Total Amount: ")
-amt_spaces = " " * num_item_spaces  
+# num_amt_spaces = 26 - len("Order Total Amount: ")
+# amt_spaces = " " * num_item_spaces  
+# print(f"Order Total Amount: {amt_spaces}"
+#      f"${tot_oder_amt:,.2f}")
 
-print(f"Order Total Amount: {amt_spaces} ${tot_oder_amt:,.2f}")
+print(f"Order Total Amount: {'':<8}${tot_oder_amt: ,.2f}")
 print("----------------------------------------------\n")
 
 
